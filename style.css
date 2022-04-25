@@ -30,7 +30,7 @@ body {
     width: 37vw;
     height: 100%;
     background-image: url(./form-tree.jpg);
-    background-size: auto 100%;
+    background-size: cover;
     background-position: 15%;
     color: var(--white);
     display: flex;
@@ -196,6 +196,18 @@ button:hover {
     }
 }
 
+
+input[type="password"] {
+    border-color: red;
+}
+
+.main-container-form-wrapper div:last-child {
+    color: red;
+    padding: 5px;
+    width: 75%;
+    flex-direction: row;
+}
+
 @media screen and (max-width: 900px) {
     body {
         flex-direction: column;
@@ -253,5 +265,9 @@ button:hover {
 @media screen and (max-width: 425px) {
     input {
         width: 100%;
+    }
+
+    .main-container-text p {
+        font-size: 1.25rem;
     }
 }
