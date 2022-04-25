@@ -13,8 +13,13 @@
     src: url(./norse-bold-webfont.woff) format("woff");
 }
 
+html,
 body {
-    height: 100%;
+    height: 100vh;
+}
+
+body {
+
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
@@ -22,8 +27,8 @@ body {
 }
 
 .logo-container {
-    width: 35%;
-    height: 100vh;
+    width: 37vw;
+    height: 100%;
     background-image: url(./form-tree.jpg);
     background-size: auto 100%;
     background-position: 15%;
@@ -35,15 +40,15 @@ body {
 }
 
 .main-container {
-    width: 65%;
-    height: 100vh;
+    width: 63vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .main-container-text,
 .main-container-confirm {
-    height: 35%;
+    height: 35vh;
     background-color: rgba(197, 209, 213, 0.1);
 }
 
@@ -64,26 +69,45 @@ body {
 }
 
 .main-container-form {
-    height: 30%;
+    height: 30vh;
     box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    padding: 30px;
+    padding: 15px 40px;
     display: flex;
     flex-direction: column;
 
 }
 
-.main-container-form form {
+.main-container-form p {
+    font-size: 20px;
+}
+
+.main-container-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.main-container-form-wrapper div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
+    font-size: 12px;
 }
 
 input,
 label {
     display: block;
     width: 200px;
-    margin-right: 20px;
+    margin-right: 75px;
+    padding: 5px;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border-width: thin;
+}
+
+
+label {
+    text-transform: uppercase;
 }
 
 .logo-container-block-1 {
@@ -120,6 +144,7 @@ label {
 
 .logo-container-block-2 {
     height: 50px;
+    font-size: 2vmin;
 }
 
 .logo-container-block-2 a {
@@ -127,7 +152,7 @@ label {
 }
 
 .main-container-confirm p {
-    margin: 0 30px;
+    margin: 10px 30px;
 }
 
 .main-container-confirm a {
@@ -139,10 +164,12 @@ label {
 form {
     display: flex;
     flex-direction: column;
+    margin-top: 25px;
 }
 
 button {
     border-radius: 10px;
+    border: none;
     box-shadow: 0px 1px 5px #d1d1d1;
     color: #ffffff;
     background: var(--green);
@@ -150,9 +177,81 @@ button {
     text-decoration: none;
     margin: 30px;
     font-size: 1.1rem;
+    font-weight: 700;
 }
 
 button:hover {
     background: #5e853c;
     text-decoration: none;
+}
+
+@media screen and (max-width: 1031px) {
+    input {
+        width: 35vw;
+    }
+
+
+    .main-container-form {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+
+    .main-container {
+        width: 100vw;
+    }
+
+    .logo-container {
+        width: 100vw;
+        height: 20vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .logo-container-block-1 span {
+        font-size: 3rem;
+    }
+
+    .logo-container-block-2 {
+        display: none;
+    }
+
+    .logo-container-block-1 div {
+        align-items: flex-end;
+        padding-bottom: 10px;
+        height: 25vh;
+    }
+
+    .main-container-text p:first-child {
+        margin-top: 20px;
+    }
+
+    .main-container-form-wrapper div {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .logo-container-block-1 div::before {
+        width: 50px;
+        height: 67px;
+        background-size: 50px 67px;
+    }
+
+    .main-container-text {
+        justify-content: center;
+    }
+}
+
+
+
+@media screen and (max-width: 425px) {
+    input {
+        width: 100%;
+    }
 }
